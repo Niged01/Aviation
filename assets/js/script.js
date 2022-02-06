@@ -116,7 +116,7 @@ let currentQuestionIndex = -1;
 let score = 0;
 
 
-fuction renderNextQuestion() {
+function renderNextQuestion() {
     currentQuestionIndex++;
     let nextQuestion = QUESTIONS[currentQuestionIndex];
 
