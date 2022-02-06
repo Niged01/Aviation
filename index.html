@@ -8,16 +8,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <img class="header-image" src="assets/images/backgroundimage.jpg" alt="Planes flying through clouds">
-        <h1 class="heading">Aviation Knowledge</h1>
-        <div class="game-area"> 
-            <div class="controls">
-                <button type="button" onclick="window.location.href='questions.html'">Start</button>
-                <button type="button" onclick="window.location.href='questions.html'">High Scores</button>
-            </div>
+    <section class="top-game-area">
+        <div class="game-area">
+        <img class="header-image" src="assets/images/background-image.jpg" alt="Planes flying through clouds">
         </div>
-    </div>
+        <div class="game-area">
+            <h1 class="heading">Aviation Knowledge</h1>
+            <div class="controls">
+                <button type="button" onclick="window.location.href='questions.html'" class="btn">Start</button>
+                <button type="button" onclick="window.location.href='highscores.html'" id="highscore-btn" class="btn">High Scores</button>
+            </div>
+        
+        </div>
+    </section>
 
 
     <script src="assets/js/script.js"></script> 
