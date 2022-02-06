@@ -85,16 +85,48 @@ body {
 /* game page styling */
 
 #game-area {
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
     font-size: 5rem;
 }
 
-#answers {
-    margin-top: 150px;
-    list-style-type: none;
+#question {
+    margin-bottom: 30px;
+}
+.answers-container {
+    display: flex;
+    margin-bottom: 1rem;
+    margin-left: 100px;
+    width: 80%;
+    border-radius: 15px;
+    background: rgb(14, 132, 168);
+    font-size: 4rem;
+    min-width: 30rem;
+}
+
+.answers-container:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(14, 132, 168);
+    transition: transform 150ms;
+    transform: scale(1.03);
+}
+
+.answers-prefix {
+    padding: 1rem 1.5rem;
+    color: aliceblue;
+}
+
+.answer-text {
+    padding: 1.5rem;
+    text-align: left;
+    width: 100%;
 }
 
 #control {
-    margin-top: 150px;
+    margin-top: 240px;
+    
+}
+.tally-area {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 80px;
 }

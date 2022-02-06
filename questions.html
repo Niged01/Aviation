@@ -13,7 +13,7 @@
             <img class="header-image" src="assets/images/background-image.jpg" alt="Planes flying through clouds">
         </div>
         <div class="game-area" id="game-area">        
-           <div id="question">question</div>
+           <h1 id="question">question</h1>
            <div class="answers-container">
                <p class="answers-prefix">A</p>
                <p class="answer-text" data-number="1">Answer1</p>
@@ -32,6 +32,10 @@
             </div>
             <div class="controls" id="control">
                 <button onclick="renderNextQuestion" class="btn">Next Question</button>
+            </div>
+            <div class="tally-area">
+                <p class="tally">Correct Answers <span id="score">0</span></p>
+                <p class="tally">Incorrect Answers <span id="incorrect">0</span></p>
             </div>
         </div>
     </section>
