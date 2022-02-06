@@ -8,18 +8,33 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <span>Question</span>
-        <ul>
-            <li>Option 1</li>
-            <li>Option 2</li>
-            <li>Option 3</li>
-            <li>Option 4</li>
-        </ul>
-    
-    </div>
-    
-    <button onclick="renderNextQuestion">Next Question</button>
+    <section class="top-game-area"> 
+        <div class="game-area">
+            <img class="header-image" src="assets/images/background-image.jpg" alt="Planes flying through clouds">
+        </div>
+        <div class="game-area" id="game-area">        
+           <div id="question">question</div>
+           <div class="answers-container">
+               <p class="answers-prefix">A</p>
+               <p class="answer-text" data-number="1">Answer1</p>
+           </div>
+           <div class="answers-container">
+                <p class="answers-prefix">B</p>
+                <p class="answer-text" data-number="2">Answer2</p>
+            </div>
+            <div class="answers-container">
+                <p class="answers-prefix">C</p>
+                <p class="answer-text" data-number="1">Answer3</p>
+            </div>
+            <div class="answers-container">
+                <p class="answers-prefix">D</p>
+                <p class="answer-text" data-number="1">Answer4</p>
+            </div>
+            <div class="controls" id="control">
+                <button onclick="renderNextQuestion" class="btn">Next Question</button>
+            </div>
+        </div>
+    </section>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ body {
     font-size: 62.5%;
     font-family: 'Roboto Mono', monospace;
 }
-
+/* Landing page styling */
 .top-game-area {
     display: grid;
     grid-template-columns: 1fr;
@@ -54,6 +54,7 @@ body {
     padding: 2rem;
 }
 
+/* buttons */
 .controls {
     height: 10vh;
     font-size: 5.5rem;
@@ -81,3 +82,19 @@ body {
     transform: none;
 }
 
+/* game page styling */
+
+#game-area {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 5rem;
+}
+
+#answers {
+    margin-top: 150px;
+    list-style-type: none;
+}
+
+#control {
+    margin-top: 150px;
+}
