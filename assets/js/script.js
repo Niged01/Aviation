@@ -1,22 +1,41 @@
-const QUESTIONS = [
+document.addEventListener('DOMContentLoaded')
+
+const start = document.getElementById('start')
+const nextQuestion = document.getElementById('next-question')
+const question = document.getElementById('question')
+const answers = document.getElementsByClassName('.answer-text')
+const score = document.getElementById('score')
+const incorrect = document.getElementById('incorrect')
+
+
+
+start.addEventListener('click', renderNextQuestion)
+
+nextQuestion.addEventListener('click', () => {
+    currentQuestionIndex++;
+    nextQuestion();
+  });
+
+
+const questions = [
     {
         question: "Name this plane?",
         options: [
-            a:"Boeing 747",
-            b:"Airbus A380",
-            c:"Boeing 787",
-            d:"Airbus A350"
+            "Boeing 747",
+            "Airbus A380",
+            "Boeing 787",
+            "Airbus A350"
         ],
-        "correct": 4,
-        "hint_image": "url"
+        correct: 4,
+        imgSrc: "assets/images/a350.jpg"
     },
     {
         question: "What airline does this tail symbol belong to?",
         options: [
-            a:"American",
-            b:"Lufthansa",
-            c:"British Airways",
-            d:"Qantas"
+            "American",
+            "Lufthansa",
+            "British Airways",
+            "Qantas"
         ],
         "correct": 2,
         "hint_image": "url"
@@ -24,10 +43,10 @@ const QUESTIONS = [
     {
         question: "Airbus's most produced plane is the?",
         options: [
-            a:"A320",
-            b:"A330",
-            c:"A350",
-            d:"A380"
+            "A320",
+            "A330",
+            "A350",
+            "A380"
         ],
         "correct": 1,
         "hint_image": "url"
@@ -35,10 +54,10 @@ const QUESTIONS = [
     {
         question: "ILS to a pilot means?",
         options: [
-            a:"Information Localizer System",
-            b:"Instrument Landing System",
-            c:"Instrument Localizer System",
-            d:"Information Landing System"
+            "Information Localizer System",
+            "Instrument Landing System",
+            "Instrument Localizer System",
+            "Information Landing System"
         ],
         "correct": 2,
         "hint_image": "url"
@@ -46,10 +65,10 @@ const QUESTIONS = [
     {
         question: "Who makes the A380 engines?",
         options: [
-            a:"Boeing",
-            b:"Landrover",
-            c:"Bently",
-            d:"Rolls-Royce"
+            "Boeing",
+            "Landrover",
+            "Bently",
+            "Rolls-Royce"
         ],
         "correct": 4,
         "hint_image": "url"
@@ -57,10 +76,10 @@ const QUESTIONS = [
     {
         question: "Which one of these Aircraft has the longest flying capacity? ",
         options: [
-            a:"A350-900ULR",
-            b:"747-800",
-            c:"A380-300",
-            d:"787 Dreamliner"
+            "A350-900ULR",
+            "747-800",
+            "A380-300",
+            "787 Dreamliner"
         ],
         "correct": 2,
         "hint_image": "url"
@@ -68,10 +87,10 @@ const QUESTIONS = [
     {
         question: "This is a cockpit of a?",
         options: [
-            a:"747",
-            b:"A320",
-            c:"A330",
-            d:"777"
+            "747",
+            "A320",
+            "A330",
+            "777"
         ],
         "correct": 3,
         "hint_image": "url"
@@ -79,10 +98,10 @@ const QUESTIONS = [
     {
         question: "What year was the 1st A380 produced?",
         options: [
-            a:"1990",
-            b:"1997",
-            c:"2007",
-            d:"2010"
+            "1990",
+            "1997",
+            "2007",
+            "2010"
         ],
         "correct": 3,
         "hint_image": "url"
@@ -90,10 +109,10 @@ const QUESTIONS = [
     {
         question: "who was the 1st woman to fly solo around the globe?",
         options: [
-            a:"zara Rutherford",
-            b:"Amelia Earhart",
-            c:"Sarah Smith",
-            d:"Jerrie Mock"
+            "zara Rutherford",
+            "Amelia Earhart",
+            "Sarah Smith",
+            "Jerrie Mock"
         ],
         "correct": 2,
         "hint_image": "url"
@@ -101,26 +120,26 @@ const QUESTIONS = [
     {
         question: "Which Airline is the oldest?",
         options: [
-            a:"Korean",
-            b:"Delta",
-            c:"British Airways",
-            d:"KLM"
+            "Korean",
+            "Delta",
+            "British Airways",
+            "KLM"
         ],
         "correct": 4,
         "hint_image": "url"
     },
 ]
 
-
 let currentQuestionIndex = -1;
 let score = 0;
 
 
+
 function renderNextQuestion() {
     currentQuestionIndex++;
-    let nextQuestion = QUESTIONS[currentQuestionIndex];
+    let nextQuestion = questions[currentQuestionIndex];
 
-    questionDiv.text = nextQuestion["question"]
+    questions.text = nextQuestion["question"]
     for(option in nextQuestion["options"]) {
         option[index].text = option
     }
@@ -129,7 +148,7 @@ function renderNextQuestion() {
 
 function onUserSelection(option) {
     let userSelection = option.text;
-    let currentQuestion = QUESTIONS[currentQuestionIndex];
+    let currentQuestion = questions[currentQuestionIndex];
     let correctOption = currentQuestion["correct"];
 
     if (userSelection == correctOption) {
@@ -147,7 +166,17 @@ function updateScore() {
 }
 
 function nextQuestion() {
-    ...
+    defaultState();
     renderNextQuestion()
-    ...
+
 }
+
+function incrementScore() {
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
+  }
+  
+  function incrementWrongAnswer() {
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldScore;
+  }
