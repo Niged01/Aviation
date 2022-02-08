@@ -130,3 +130,11 @@ body {
     justify-content: space-evenly;
     margin-left: 80px;
 }
+
+.correct {
+    background-color: #28a745;
+}
+
+.incorrect {
+    background-color: #dc3545;
+}

@@ -6,13 +6,15 @@ const answers = document.getElementsByClassName("answer-text");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
-let currentQuestionIndex = 0;
+let currentQuestionIndex = -1;
 let score = 0;
+let currentIncorrectScore = 0;
 let availableQuestions= [];
 
 let nextQuestion = document.getElementById('next-question');
 let tally = document.getElementById('score');
-let incorrect = document.getElementById('incorrect');
+let incorrectTally = document.getElementById('incorrect');
+
 
 // Constants
 const MAX_NUMBER = 10;
@@ -78,13 +80,14 @@ const QUESTIONS = [
     },
 ]
 
-// Event Listener
+//disable button
 
 // Start quiz
 
 startGame = () => {
-    currentQuestionIndex = 0;
+    currentQuestionIndex = -1;
     score = 0;
+    currentIncorrectScore = 0;
     availableQuestions= [...QUESTIONS];
     renderNextQuestion();
 }
@@ -101,30 +104,33 @@ function renderNextQuestion() {
     }
 
     // hintImageTag.src = nextQuestion["imgSrc"];
+    document.getElementsByClassName("fit-picture").src = nextQuestion["imgSrc"];
+    
+    
 }
+
 
 function onUserSelection(clickEvent) {
     let userSelection = clickEvent.target.dataset.number;
     let currentQuestion = QUESTIONS[currentQuestionIndex];
     let correctOption = currentQuestion["correct"];
-
+   
     if (userSelection == correctOption) {
-        showPopUp()
+        wellDone()
     } else {
-        showAnotherPopUp()
+        nextTime()
     }
-
+  
     updateScore();
 }
 
-function showPopUp() {
-    alert("correct answer");
-}
 
-function showAnotherPopUp() {
-    alert("incorrect answer");
+function wellDone() {
+    alert('Well done you are Correct');
 }
-
+function nextTime() {
+    alert('better luck next time');
+}
 function updateScore() {
     score++;
     // updateTallyBoard(score);
@@ -145,9 +151,7 @@ function incrementScore() {
     startGame()
 });
 
-for (answer of answers) {
-    answer.addEventListener("click", onUserSelection);    
-}
+//for (answer of answers) {
+  //  answers.addEventListener("click", onUserSelection);    
+//}
 
-// answers.forEach(answer => {
-// });
