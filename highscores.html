@@ -5,12 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>Aviation</title>
 </head>
 <body>
-    <h1>I am here</h1>
-
-
+    <section class="top-game-area">
+        <div class="game-area">
+        <img class="header-image" src="assets/images/background-image.jpg" alt="Planes flying through clouds">
+        </div>
+        <div class="game-area">
+            <h1 class="heading">Check out where you rank!</h1>
+            <h2 id="finalScore">0</h2>
+            <p class="rank"> 1-5 : In pilot School</p>
+            <p class="rank"> 6-8 : 1st Officer</p>
+            <p class="rank"> 9-10 : High Ranked Commander</p>
+            <form>
+                <input type="text" name="username" id="username" placeholder="username">
+            </form>
+            <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)">Save</button>
+            <button type="button" onclick="window.location.href='index.html'" class="btn" id="start">Re Start</button>
+        </div>
+    </section>
 
     <script src="assets/js/script.js"></script>
 </body>
