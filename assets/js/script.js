@@ -3,15 +3,15 @@
 // const start = document.getElementById("start");
 const question = document.getElementById("question");
 const answers = document.getElementsByClassName("answer-text");
+const quizContainer = document.getElementsByClassName("answers-container");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
 let currentQuestionIndex = -1;
 let score = 0;
-let currentIncorrectScore = 0;
 let availableQuestions= [];
 
-let nextQuestion = document.getElementById('next-question');
+let nextQuestions = document.getElementById('next-question');
 let tally = document.getElementById('score');
 let incorrectTally = document.getElementById('incorrect');
 
@@ -87,7 +87,6 @@ const QUESTIONS = [
 startGame = () => {
     currentQuestionIndex = -1;
     score = 0;
-    currentIncorrectScore = 0;
     availableQuestions= [...QUESTIONS];
     renderNextQuestion();
 }
@@ -104,7 +103,7 @@ function renderNextQuestion() {
     }
 
     // hintImageTag.src = nextQuestion["imgSrc"];
-    document.getElementsByClassName("fit-picture").src = nextQuestion["imgSrc"];
+    //document.getElementsByClassName("fit-picture").src = nextQuestion["imgSrc"];
     
     
 }
@@ -114,16 +113,19 @@ function onUserSelection(clickEvent) {
     let userSelection = clickEvent.target.dataset.number;
     let currentQuestion = QUESTIONS[currentQuestionIndex];
     let correctOption = currentQuestion["correct"];
+    const answerContainers = quizContainer.querySelectorAll()
    
     if (userSelection == correctOption) {
-        wellDone()
+        wellDone(), 
+        currentQuestion["correct"].style.color = 'lightgreen';
     } else {
-        nextTime()
+        nextTime(),
+        currentQuestion["correct"].style.color = 'red';
     }
   
     updateScore();
 }
-
+console.log(onUserSelection)
 
 function wellDone() {
     alert('Well done you are Correct');
@@ -151,7 +153,7 @@ function incrementScore() {
     startGame()
 });
 
-//for (answer of answers) {
-  //  answers.addEventListener("click", onUserSelection);    
-//}
+for (answer of answers) {
+    answers.addEventListener("click", onUserSelection);    
+}
 

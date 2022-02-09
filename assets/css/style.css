@@ -125,6 +125,11 @@ body {
     margin-top: 240px;
     
 }
+
+img {
+    height 100px;
+    width 100px;
+}
 .tally-area {
     display: flex;
     justify-content: space-evenly;
