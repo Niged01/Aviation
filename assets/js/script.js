@@ -7,6 +7,7 @@ const answersContainerRef = Array.from(document.querySelectorAll(".answers-conta
 const nextQuestionsRef = document.querySelector('#next-question');
 const scoreRef = document.querySelector('#score');
 const incorrectScoreRef = document.querySelector('#incorrect');
+const questionImageRef = document.querySelector('#fit-picture');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -103,15 +104,13 @@ function renderNextQuestion() {
         answersRef[i].innerText = nextQuestion["options"][i];
     }
 
-    // hintImageTag.src = nextQuestion["imgSrc"];
-    //Array.from(document.querySelectorAll(".fit-picture")).src = nextQuestion["imgSrc"];
-    
+    questionImageRef.src=nextQuestion["imgSrc"]
     
 }
 
 
 function onUserSelection(clickEvent) {
-    let userSelection = clickEvent.target.dataset.number;
+    let userSelection = clickEvent.currentTarget.children[1].dataset.number;
     let currentQuestion = QUESTIONS[currentQuestionIndex];
     let correctOption = currentQuestion["correct"];
     
@@ -119,9 +118,9 @@ function onUserSelection(clickEvent) {
     if (userSelection == correctOption) {
         //wellDone(), 
         console.log(clickEvent)
-        clickEvent.target.classList.add('correct')
+        clickEvent.currentTarget.children[1].classList.add('correct')
     } else {
-        clickEvent.target.classList.add('incorrect')
+        clickEvent.currentTarget.children[1].classList.add('incorrect')
     }
   
     updateScore();

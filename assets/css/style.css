@@ -124,13 +124,13 @@ body {
 }
 
 #control {
-    margin-top: 240px;
+    margin-top: 1rem;
     
 }
 
-img {
-    height: 100px;
-    width: 100px;
+#fit-picture {
+    height: 25rem;
+    width: 35rem;
 }
 .tally-area {
     display: flex;
@@ -139,7 +139,7 @@ img {
 }
 
 .correct {
-    background-color: #28a745;
+    background-color: #24e652;
 }
 
 .incorrect {
