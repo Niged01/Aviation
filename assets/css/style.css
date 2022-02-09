@@ -148,7 +148,19 @@ body {
 }
 
 
-/* highscores.html */
+/* highscores.html final page */
+
+#final-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: none;
+    border-top: none;
+}
+
+#final-heading {
+    height: 15vh;
+}
 
 /* form */
 form {
