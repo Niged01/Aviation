@@ -14,6 +14,7 @@ let acceptingAnswers = false;
 let answerSelected = true;
 let currentQuestionIndex = -1;
 let score = 0;
+let inco
 let availableQuestions= [];
 
 
@@ -97,6 +98,10 @@ startGame = () => {
 //Quiz game
 
 function renderNextQuestion() {
+    for (let button of answersRef) {
+        button.classList.remove("correct");
+        button.classList.remove("incorrect")
+    }
     if (answerSelected) {
         currentQuestionIndex++;
         let nextQuestion = QUESTIONS[currentQuestionIndex];
@@ -112,7 +117,6 @@ function renderNextQuestion() {
     
 }
 
-
 function onUserSelection(clickEvent) {
     let userSelection = clickEvent.currentTarget.children[1].dataset.number;
     let currentQuestion = QUESTIONS[currentQuestionIndex];
@@ -120,16 +124,22 @@ function onUserSelection(clickEvent) {
     answerSelected = true;
     
     if (userSelection == correctOption) {
-        clickEvent.currentTarget.children[1].classList.add('correct')
+        clickEvent.currentTarget.children[1].classList.add('correct');
+        incrementScore();
     } else {
-        clickEvent.currentTarget.children[1].classList.add('incorrect')
+        clickEvent.currentTarget.children[1].classList.add('incorrect');
+        incrementWrongAnswer();
     }
-  
-    updateScore();
+    
 }
 
-
-
+// renderNextQuestion = () => {
+//     currentQuestionIndex++;
+//     for (let button of answersContainerRef) {
+//         button.classList.remove("correct");
+//         button.classList.remove("incorrect")
+//     }
+// }
 
 function updateScore() {
     score++;
