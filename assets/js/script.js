@@ -11,6 +11,7 @@ const questionImageRef = document.querySelector('#fit-picture');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
+let answerSelected = true;
 let currentQuestionIndex = -1;
 let score = 0;
 let availableQuestions= [];
@@ -96,15 +97,18 @@ startGame = () => {
 //Quiz game
 
 function renderNextQuestion() {
-    currentQuestionIndex++;
-    let nextQuestion = QUESTIONS[currentQuestionIndex];
+    if (answerSelected) {
+        currentQuestionIndex++;
+        let nextQuestion = QUESTIONS[currentQuestionIndex];
 
-    questionRef.innerText = nextQuestion["question"]
-    for (i = 0; i<nextQuestion["options"].length; i++){
-        answersRef[i].innerText = nextQuestion["options"][i];
-    }
+        questionRef.innerText = nextQuestion["question"]
+        for (i = 0; i<nextQuestion["options"].length; i++){
+            answersRef[i].innerText = nextQuestion["options"][i];
+        }
 
-    questionImageRef.src=nextQuestion["imgSrc"]
+        questionImageRef.src=nextQuestion["imgSrc"]
+        answerSelected = false;
+    } 
     
 }
 
@@ -113,11 +117,9 @@ function onUserSelection(clickEvent) {
     let userSelection = clickEvent.currentTarget.children[1].dataset.number;
     let currentQuestion = QUESTIONS[currentQuestionIndex];
     let correctOption = currentQuestion["correct"];
-    
+    answerSelected = true;
     
     if (userSelection == correctOption) {
-        //wellDone(), 
-        console.log(clickEvent)
         clickEvent.currentTarget.children[1].classList.add('correct')
     } else {
         clickEvent.currentTarget.children[1].classList.add('incorrect')
@@ -125,7 +127,8 @@ function onUserSelection(clickEvent) {
   
     updateScore();
 }
-console.log(onUserSelection)
+
+
 
 
 function updateScore() {
