@@ -8,7 +8,6 @@ const finalScoreRef = document.querySelector('#finalScore');
 const score = localStorage.getItem('score');
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 const MaxHighScores = 5;
-console.log(localStorage)
 //Enter username
 usernameRef.addEventListener('keyup', () => {
     saveScoreRef.disabled = !usernameRef.value;
@@ -31,4 +30,11 @@ saveHighScore = e => {
     
 }
 
+//High score scoreboard
+const highScoresList = document.querySelector("highScoreList");
+
+highScoreList.innerHTML = highScores
+    .map(score => {
+        return `<li class="high-score">${score.name} - ${score.score}</li>`;
+    })
 
