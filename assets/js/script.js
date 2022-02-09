@@ -10,19 +10,12 @@ const scoreRef = document.querySelector('#score');
 const incorrectScoreRef = document.querySelector('#incorrect');
 const questionImageRef = document.querySelector('#fit-picture');
 
-let currentQuestion = {};
-let acceptingAnswers = false;
 let answerSelected = true;
 let currentQuestionIndex = -1;
 let score = 0;
-let inco
 let availableQuestions= [];
 
-
-
-
 // Constants
-const MAX_NUMBER = 10;
 const QUESTIONS = [
     {
         "question": "Name this plane?",
@@ -86,8 +79,6 @@ const QUESTIONS = [
     },
 ]
 
-//disable button
-
 // Start quiz
 
 startGame = () => {
@@ -100,59 +91,49 @@ startGame = () => {
 //Quiz game
 
 function renderNextQuestion() {
-    for (let button of answersRef) {
-        button.classList.remove("correct");
-        button.classList.remove("incorrect")
+    for (let answerRef of answersRef) {
+        answerRef.classList.remove("correct");
+        answerRef.classList.remove("incorrect")
     }
-    if (currentQuestionIndex == QUESTIONS.length -1) {
+    console.log('questionIndex', currentQuestionIndex)
+    console.log('questionLength', QUESTIONS.length -1)
+    if (currentQuestionIndex === QUESTIONS.length -1) {
         nextQuestionsRef.style.display = 'none'  
         finishRef.style.display = 'inline'  
     } else {
-        //nextQuestionsRef.style.display ='inline'
         finishRef.style.display = 'none'
+        if (answerSelected) {
+            currentQuestionIndex++;
+            let nextQuestion = QUESTIONS[currentQuestionIndex];
+    
+            questionRef.innerText = nextQuestion["question"]
+            for (i = 0; i<nextQuestion["options"].length; i++){
+                answersRef[i].innerText = nextQuestion["options"][i];
+            }
+    
+            questionImageRef.src=nextQuestion["imgSrc"]
+            answerSelected = false;
+        } 
     }
-    if (answerSelected) {
-        currentQuestionIndex++;
-        let nextQuestion = QUESTIONS[currentQuestionIndex];
-
-        questionRef.innerText = nextQuestion["question"]
-        for (i = 0; i<nextQuestion["options"].length; i++){
-            answersRef[i].innerText = nextQuestion["options"][i];
-        }
-
-        questionImageRef.src=nextQuestion["imgSrc"]
-        answerSelected = false;
-    } 
     
 }
 
 function onUserSelection(clickEvent) {
-    let userSelection = clickEvent.currentTarget.children[1].dataset.number;
-    let currentQuestion = QUESTIONS[currentQuestionIndex];
-    let correctOption = currentQuestion["correct"];
-    answerSelected = true;
-    
-    if (userSelection == correctOption) {
-        clickEvent.currentTarget.children[1].classList.add('correct');
-        incrementScore();
-    } else {
-        clickEvent.currentTarget.children[1].classList.add('incorrect');
-        incrementWrongAnswer();
+    if(!answerSelected) {
+        let userSelection = clickEvent.currentTarget.children[1].dataset.number;
+        let currentQuestion = QUESTIONS[currentQuestionIndex];
+        let correctOption = currentQuestion["correct"];
+        answerSelected = true;
+        
+        if (userSelection == correctOption) {
+            clickEvent.currentTarget.children[1].classList.add('correct');
+            incrementScore();
+        } else {
+            clickEvent.currentTarget.children[1].classList.add('incorrect');
+            incrementWrongAnswer();
+        }
     }
     
-}
-
-// renderNextQuestion = () => {
-//     currentQuestionIndex++;
-//     for (let button of answersContainerRef) {
-//         button.classList.remove("correct");
-//         button.classList.remove("incorrect")
-//     }
-// }
-
-function updateScore() {
-    score++;
-    // updateTallyBoard(score);
 }
 
 // scores area
