@@ -5,6 +5,7 @@ const questionRef = document.querySelector("#question");
 const answersRef = Array.from(document.querySelectorAll(".answer-text"));
 const answersContainerRef = Array.from(document.querySelectorAll(".answers-container"));
 const nextQuestionsRef = document.querySelector('#next-question');
+const finishRef = document.querySelector('#finish');
 const scoreRef = document.querySelector('#score');
 const incorrectScoreRef = document.querySelector('#incorrect');
 const questionImageRef = document.querySelector('#fit-picture');
@@ -56,7 +57,7 @@ const QUESTIONS = [
     {
         "question": "Which one of these Aircraft has the longest flying capacity? ",
         "options": [ "A350-900ULR", "747-800", "A380-300", "787 Dreamliner"],
-        "correct": 2,
+        "correct": 1,
         "imgSrc": "url"
     },
     {
@@ -80,6 +81,7 @@ const QUESTIONS = [
     {
         "question": "Which Airline is the oldest?",
         "options": [ "Korean", "Delta", "British Airways", "KLM" ],
+        "correct": 4,
         "imgSrc": "url"
     },
 ]
@@ -101,6 +103,13 @@ function renderNextQuestion() {
     for (let button of answersRef) {
         button.classList.remove("correct");
         button.classList.remove("incorrect")
+    }
+    if (currentQuestionIndex == QUESTIONS.length -1) {
+        nextQuestionsRef.style.display = 'none'  
+        finishRef.style.display = 'inline'  
+    } else {
+        nextQuestionsRef.style.display ='inline'
+        finishRef.style.display = 'none'
     }
     if (answerSelected) {
         currentQuestionIndex++;
@@ -165,3 +174,8 @@ for (const answer of answersContainerRef) {
     answer.addEventListener("click", onUserSelection);
 }
 
+function saveHighScore() {
+    let score = parseInt(scoreRef.innerText);
+    localStorage.setItem('score', score);
+    window.location.assign("highscores.html");
+}
