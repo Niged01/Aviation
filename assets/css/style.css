@@ -119,6 +119,8 @@ body {
     padding: 1.5rem;
     text-align: left;
     width: 100%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 #control {
@@ -127,8 +129,8 @@ body {
 }
 
 img {
-    height 100px;
-    width 100px;
+    height: 100px;
+    width: 100px;
 }
 .tally-area {
     display: flex;

@@ -1,9 +1,12 @@
 // variables
 
-// const start = document.getElementById("start");
-const question = document.getElementById("question");
-const answers = document.getElementsByClassName("answer-text");
-const quizContainer = document.getElementsByClassName("answers-container");
+// const start = document.querySelector("#start");
+const questionRef = document.querySelector("#question");
+const answersRef = Array.from(document.querySelectorAll(".answer-text"));
+const answersContainerRef = Array.from(document.querySelectorAll(".answers-container"));
+const nextQuestionsRef = document.querySelector('#next-question');
+const scoreRef = document.querySelector('#score');
+const incorrectScoreRef = document.querySelector('#incorrect');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -11,9 +14,7 @@ let currentQuestionIndex = -1;
 let score = 0;
 let availableQuestions= [];
 
-let nextQuestions = document.getElementById('next-question');
-let tally = document.getElementById('score');
-let incorrectTally = document.getElementById('incorrect');
+
 
 
 // Constants
@@ -97,13 +98,13 @@ function renderNextQuestion() {
     currentQuestionIndex++;
     let nextQuestion = QUESTIONS[currentQuestionIndex];
 
-    question.innerText = nextQuestion["question"]
+    questionRef.innerText = nextQuestion["question"]
     for (i = 0; i<nextQuestion["options"].length; i++){
-        answers[i].innerText = nextQuestion["options"][i];
+        answersRef[i].innerText = nextQuestion["options"][i];
     }
 
     // hintImageTag.src = nextQuestion["imgSrc"];
-    //document.getElementsByClassName("fit-picture").src = nextQuestion["imgSrc"];
+    //Array.from(document.querySelectorAll(".fit-picture")).src = nextQuestion["imgSrc"];
     
     
 }
@@ -113,26 +114,21 @@ function onUserSelection(clickEvent) {
     let userSelection = clickEvent.target.dataset.number;
     let currentQuestion = QUESTIONS[currentQuestionIndex];
     let correctOption = currentQuestion["correct"];
-    const answerContainers = quizContainer.querySelectorAll()
-   
+    
+    
     if (userSelection == correctOption) {
-        wellDone(), 
-        currentQuestion["correct"].style.color = 'lightgreen';
+        //wellDone(), 
+        console.log(clickEvent)
+        clickEvent.target.classList.add('correct')
     } else {
-        nextTime(),
-        currentQuestion["correct"].style.color = 'red';
+        clickEvent.target.classList.add('incorrect')
     }
   
     updateScore();
 }
 console.log(onUserSelection)
 
-function wellDone() {
-    alert('Well done you are Correct');
-}
-function nextTime() {
-    alert('better luck next time');
-}
+
 function updateScore() {
     score++;
     // updateTallyBoard(score);
@@ -140,20 +136,20 @@ function updateScore() {
 
 // scores area
 function incrementScore() {
-    let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++oldScore;
+    let oldScore = parseInt(scoreRef.innerText);
+    scoreRef.innerText = ++oldScore;
   }
   
   function incrementWrongAnswer() {
-    let oldScore = parseInt(document.getElementById("incorrect").innerText);
-    document.getElementById("incorrect").innerText = ++oldScore;
+    let oldScore = parseInt(incorrectScoreRef.innerText);
+    incorrectScoreRef.innerText = ++oldScore;
   }
 
   window.addEventListener('DOMContentLoaded', (event) => {
     startGame()
 });
 
-for (answer of answers) {
-    answers.addEventListener("click", onUserSelection);    
+for (const answer of answersContainerRef) {
+    answer.addEventListener("click", onUserSelection);
 }
 
