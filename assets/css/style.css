@@ -153,6 +153,7 @@ body {
 #final-page {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     height: 100vh;
     border-top: 10px;
@@ -161,6 +162,20 @@ body {
 #final-heading {
     height: 15vh;
     margin-top: 10px;
+}
+
+#finalScore {
+    font-size: 2.5rem;
+    height: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.rank {
+    font-size: 2.5rem;
+    height: 5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
 /* form */
@@ -172,10 +187,43 @@ form {
 }
 
 input {
-    margin-bottom: 1rem;
-    width: 20rem;
+    margin-bottom: 2rem;
+    width: 30rem;
     padding: 1.5rem;
     font-size: 1.8rem;
     border: none;
     box-shadow: 0 0.4rem 1.4rem 0 rgb(14, 132, 168);
+}
+
+#saveScoreBtn {
+    margin-bottom: 2rem;
+}
+
+/* High score page */
+
+#finalScore {
+    height: 10rem;
+    font-size: 5rem;
+}
+
+#high-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    border-top: 10px;
+}
+
+#highScoresList {
+    font-size: 2.5rem;
+    height: 5rem;
+    font-weight: 600;
+    margin-top: 5rem;
+    margin-bottom: 15rem;
+}
+
+#go-home{
+    text-align: center;
+    text-decoration: none;
 }
