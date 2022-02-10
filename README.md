@@ -81,7 +81,7 @@ A high scores page shows the top 5 latest game results
 
 This is a fun feature to create a bit of competitiveness amongst the user and their friends
 
-Features left to implement 
+### Features left to implement 
 
 Further quiz questions so the user doesn’t have the same questions every time.
 Possibly look at introducing different theme quizzes relating to aviation.
@@ -152,7 +152,12 @@ scoreBoard.html
 
 JsHint
 
-
+script.js
+![script.js](./assets/screenShots/questionjs.png)
+highScore.js
+![highScore.js](./assets/screenShots/highscorejs.png)
+scoreBoard.js
+![scoreboard.js](./assets/screenShots/scoreboardls.png)
 
 
 
