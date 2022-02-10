@@ -137,7 +137,23 @@ Go home button tested works as expected takes user to home page
 Test high scores page show latest top 5 scores as expected 
 Go home button works as expect takes user back to home page 
 
-W3c Validator
+### W3c Validator
+index.html
+![index.html](./assets/screenShots/indexthtml.png)
+questions.html - Note here is says src code missing not required as this is a pace filler for the JavaScript
+![questions.hmtl](./assets/screenShots/questionshtml.png)
+highscores.html
+![highscores.html](./assets/screenShots/scorehtml.png)
+scoreBoard.html
+![scoreBoard.html](./assets/screenShots/tallyboard.png)
+
+### CSS validator
+![css](./assets/screenShots/css.png)
+
+JsHint
+
+
+
 
 
 
@@ -178,22 +194,19 @@ o	On this part it says it now has it's own dedicated tab and to click check it o
 8.	Type git clone and paste the Url from step 4.
 9.	Press enter to create the cloned directory.
 
+## Credits
 
-### Credits
-•	logo image
-•	Who wants to be a millionaire - bumper quiz book
-o	used to generate the questions and answers
 ### Code
 •	watched this you tube video for help to get started and took some snippets from it. 
-    https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx
+    [YouTube link](https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx)
  
 ### Media
-•	The background image and all other images were obtained from:
-o	Deposit photos - https://depositphotos.com/
-o	Shuttersotck - https://www.shutterstock.com/
+	The background image and all other images were obtained from:
+	Deposit photos - https://depositphotos.com/
+	Shuttersotck - https://www.shutterstock.com/
 
 ### Acknowledgements:
-•	Code institute for course material and content
-•	Everybody on the slack community for support, advice, guidance and patience.
-•	My mentor for assistance and advice on planning and final submission feedback.
-Some credit to the Code Institute course content for the basic timer function. I modified it quite a bit, but the general concept remains the same.
+	Code institute for course material and content
+	Everybody on the slack community for support, advice, guidance and patience.
+	My mentor for assistance and advice on planning and final submission feedback.
+    Some credit to the Code Institute course content for the basic timer function. I modified it quite a bit, but the general concept remains the same.
