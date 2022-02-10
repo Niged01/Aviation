@@ -172,6 +172,10 @@ Created separate HTML and JavaScript page for score board resolving matter and c
 
 Home page button on score board html when clicked font turns red for split second I am aware of this but did not have the time to sort this one out 
 
+Images don't yet have atl refrences ran out of time to implement will put these in once marked. 
+
+### Readme
+I have run out of time to put in images of all features and the testing images showing where I test the site however as the features and testing becomes evident once you are on the site I have left these out for now will impletent at a later date
 
 ## Deployment
 ----------
