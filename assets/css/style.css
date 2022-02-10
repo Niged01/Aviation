@@ -227,3 +227,97 @@ input {
     text-align: center;
     text-decoration: none;
 }
+
+/* Mdeia Queries */
+
+@media screen and (max-width: 816px) {
+   .header-image {
+    width: 95vw;
+   }
+}
+  
+@media screen and (max-width: 768px) {
+    .header-image {
+        object-fit: cover;
+        padding: 1rem;
+    }
+    .game-area {
+        padding: 0;
+        width: 90vw;
+    }
+    .answers-container{
+        margin-left: 70px;
+    }
+   .controls {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       margin-top: 350px;
+   }
+   .btn {
+       margin-top: 2rem;
+   }
+   
+}
+  
+@media screen and (max-width: 377px) {
+    .game-area {
+        margin-top: 5px;
+        padding: 0.5rem;
+    }
+    #game-area{
+        margin-top: 5px;
+    }
+    .header-image {
+        object-fit: cover;
+    }
+    .heading {
+        margin-top: 5px;
+        padding: 0;
+    }
+    #question {
+        margin-top: 10px;
+        margin-bottom: 15px;
+        font-size: 2rem;
+    }
+    .answers-container{
+        margin-left: 30px;
+        font-size: 2rem;
+        font-weight: 550;
+    }
+    #fit-picture {
+        height: 15rem;
+        width: 20rem;
+    }
+    .controls {
+        margin-top: 240px;
+    }
+    #control{
+        margin-top: 0;
+    }
+    .btn {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        width: 25rem;
+    }
+    .tally-area{
+        margin-top: .5rem;
+        margin-left: 15px;
+    }
+    #final-heading {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        height: 5vh;
+    }
+    #finalScore {
+        margin-bottom: 0.5rem;
+        height: 10vh;
+    }
+    .rank{
+        margin-left: 10px;
+        font-size: 1.5rem;
+    }
+    #username {
+        width: 25rem;
+    }
+}
