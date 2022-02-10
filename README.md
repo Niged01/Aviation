@@ -1,7 +1,8 @@
 # Aviation Knowledge
 -----
-insert links here
+[view the live site here](https://niged01.github.io/Aviation/)
 
+[View  Github](https://github.com/Niged01/Aviation)
 
 ## Final Design
 -------
