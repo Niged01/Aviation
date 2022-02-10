@@ -1,43 +1,3 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome Niged01,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
 # Aviation Knowledge
 -----
 insert links here
@@ -45,7 +5,7 @@ insert links here
 
 ## Final Design
 -------
-Insert responive design screen test
+![responsive images](./assets/screenShots/responsive.png)
 
 ## Objective
 --------
@@ -175,3 +135,64 @@ Go home button tested works as expected takes user to home page
 
 Test high scores page show latest top 5 scores as expected 
 Go home button works as expect takes user back to home page 
+
+W3c Validator
+
+
+
+
+
+## Bugs 
+---------
+Bug is code for score board was not running correctly originally wants high scores to show on end html page but code would not produce desired outcome
+
+Created separate HTML and JavaScript page for score board resolving matter and code implanting correctly. In hindsight this is a better user experience as this keeps their end score separate until the board is updated.
+
+Home page button on score board html when clicked font turns red for split second I am aware of this but did not have the time to sort this one out 
+
+
+## Deployment
+----------
+•	Git butThe project was deployed to Github pages using the following steps:
+1.	Log into Github and locate the Github repository.
+2.	Click on the settings icon at the top of the repository.
+3.	Scroll down until you come to the Github pages section
+
+o	On this part it says it now has it's own dedicated tab and to click check it out click this.
+4.	Where it says source select main, next to this should say root.
+5.	Click save, then refresh the page.
+    Forking the repository
+1.	Log into the Github repository.
+2.	Underneath your avatar is a button labelled Fork, click this.
+3.	You should have your own copy now.
+
+    Cloning the repository
+1.	Log into Github and locate the repository.
+2.	Under the repository name click the button labelled code.
+3.	You will see an option to clone or download.
+4.	Copy the url for cloning by clicking the clipboard icon.
+5.	Launch gitpod or your own choice of directory.
+6.	Open Gitbash
+7.	Change the current working directory to the location you want the cloned directory to be.
+8.	Type git clone and paste the Url from step 4.
+9.	Press enter to create the cloned directory.
+
+
+### Credits
+•	logo image
+•	Who wants to be a millionaire - bumper quiz book
+o	used to generate the questions and answers
+### Code
+•	watched this you tube video for help to get started and took some snippets from it. 
+    https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx
+ 
+### Media
+•	The background image and all other images were obtained from:
+o	Deposit photos - https://depositphotos.com/
+o	Shuttersotck - https://www.shutterstock.com/
+
+### Acknowledgements:
+•	Code institute for course material and content
+•	Everybody on the slack community for support, advice, guidance and patience.
+•	My mentor for assistance and advice on planning and final submission feedback.
+Some credit to the Code Institute course content for the basic timer function. I modified it quite a bit, but the general concept remains the same.
